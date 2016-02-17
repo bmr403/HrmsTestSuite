@@ -29,7 +29,7 @@
         <cache.path>target/cache</cache.path>
 
         <jdbc.username>root</jdbc.username>
-        <jdbc.password>12345</jdbc.password>
+        <jdbc.password>root</jdbc.password>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
         <jdbc.database.name>test</jdbc.database.name>
         <jdbc.database.server>localhost</jdbc.database.server>
