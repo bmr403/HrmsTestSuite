@@ -87,8 +87,8 @@
                 <configuration>
                     <instrumentation>
                         <ignores>
-                            <ignore>com.luckyryan.sample.model.*</ignore>
-                            <ignore>com.luckyryan.sample.dao.model.*</ignore>
+                            <ignore>com.hrms.app.model.*</ignore>
+                            <ignore>com.hrms.app.dao.model.*</ignore>
                         </ignores>
                         <excludes>
                             <exclude>com/luckyryan/sample/config/**.class</exclude>
