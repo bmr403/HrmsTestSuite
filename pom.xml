@@ -29,7 +29,7 @@
         <cache.path>target/cache</cache.path>
 
         <jdbc.username>root</jdbc.username>
-        <jdbc.password>root</jdbc.password>
+        <jdbc.password>12345</jdbc.password>
         <jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
         <jdbc.database.name>test</jdbc.database.name>
         <jdbc.database.server>localhost</jdbc.database.server>
@@ -91,7 +91,7 @@
                             <ignore>com.hrms.app.dao.model.*</ignore>
                         </ignores>
                         <excludes>
-                            <exclude>com/luckyryan/sample/config/**.class</exclude>
+                            <exclude>com/hrms/app/config/**.class</exclude>
                         </excludes>
                     </instrumentation>
                     <check/>
@@ -107,23 +107,46 @@
                 </executions>
             </plugin>
 
-            <!--Compiler for groovy tests-->
-            <plugin>
-                <groupId>org.codehaus.gmaven</groupId>
-                <artifactId>gmaven-plugin</artifactId>
-                <version>1.4</version>
-                <configuration>
-                    <providerSelection>2.0</providerSelection>
-                    <source/>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>testCompile</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+           <plugin>
+					<groupId>ch.fortysix</groupId>
+					<artifactId>maven-postman-plugin</artifactId>
+					<configuration>
+						<id>send surefire notification</id>
+						<phase>site</phase>
+						<goals>
+							<goal>surefire-mail</goal>
+						</goals>
+
+						<skip>false</skip>
+						<from>atoc@bpatech.com</from>
+						<subject>Hrms Test Suite JUnit Test Results</subject>
+						<failonerror>false</failonerror>
+						<mailhost>mail.bpatech.com</mailhost>
+						<mailport>25</mailport>
+						<mailuser>atoc@bpatech.com</mailuser>
+						<mailpassword>@70Cm@!l</mailpassword>
+						<receivers>
+							<receiver>satyadev.addepally@matrixcos.com</receiver>
+						</receivers>
+						<htmlMessageFile>
+							${basedir}/target/site/surefire-report.html
+						</htmlMessageFile>
+					</configuration>
+					<executions>
+						<execution>
+							<id>send surefire notification</id>
+							<phase>site</phase>
+							<goals>
+								<goal>surefire-mail</goal>
+							</goals>
+							<configuration>
+								<subject>Hrms Test Suite JUnit Test Results</subject>
+								<groovyCondition><![CDATA[errors > 0 || skipped > 0 || failures > 0]]></groovyCondition>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+
 
             <!--Unit tests, run as noraml, run geb tests for integration-test pahse-->
             <plugin>
