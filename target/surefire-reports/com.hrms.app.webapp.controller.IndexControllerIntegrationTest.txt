@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.hrms.app.webapp.controller.IndexControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.446 sec - in com.hrms.app.webapp.controller.IndexControllerIntegrationTest
