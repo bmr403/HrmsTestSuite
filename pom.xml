@@ -528,7 +528,7 @@
                             </container>
                             <configuration>
                                 <properties>
-                                    <cargo.servlet.port>8080</cargo.servlet.port>
+                                    <cargo.servlet.port>8085</cargo.servlet.port>
                                     <cargo.tomcat.ajp.port>8109</cargo.tomcat.ajp.port>
                                     <!--<cargo.jvmargs>-->
                                     <!---javaagent:~/.m2/repository/org/jacoco/org.jacoco.agent/0.6.3.201306030806/org.jacoco.agent-0.6.3.201306030806-runtime.jar=destfile=~/j_projects/samples/SampleMVC-JPA/target/jacoco.exec-->
